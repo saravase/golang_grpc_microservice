@@ -1,0 +1,17 @@
+syntax="proto3";
+
+package golang_grpc_microservice.plant;
+
+option go_package = "pb";
+
+message Category{
+    enum Category{
+        Fruit = 0;
+        Flower = 1;
+        Tree = 2;
+        Vegetable = 3;
+        Fancy = 4;
+    }
+
+    Category category = 1;
+}
