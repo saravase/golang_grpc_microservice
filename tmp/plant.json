@@ -1,0 +1,10 @@
+{
+ "id": 60,
+ "name": "Neem",
+ "category": {
+  "category": "Vegetable"
+ },
+ "price": 500.5797,
+ "avatar": "banana.png",
+ "description": "High Vitamin Fruit"
+}

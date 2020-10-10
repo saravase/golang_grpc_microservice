@@ -6,15 +6,7 @@ import "category.proto";
 
 option go_package = "pb";
 
-service PlantService{
-    rpc GetPlant(GetPlantRequest) returns(GetPlantResponse);
-}
-
-message GetPlantRequest{
-    int32 id = 1;
-}
-
-message GetPlantResponse{
+message Plant{
     int32 id = 1;
     string name = 2;
     Category category = 3;
