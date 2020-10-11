@@ -1,4 +1,4 @@
-package sample
+package data
 
 import (
 	"golang_grpc_microservice/pb"
@@ -6,7 +6,7 @@ import (
 
 func NewPlant() *pb.Plant {
 	return &pb.Plant{
-		Id:   randomInt(1, 100),
+		Id:   randomPlantId(),
 		Name: randomPlantName(),
 		Category: &pb.Category{
 			Category: randomPlantCategory(),

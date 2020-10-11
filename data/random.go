@@ -1,9 +1,11 @@
-package sample
+package data
 
 import (
 	"golang_grpc_microservice/pb"
 	"math/rand"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 func init() {
@@ -25,8 +27,8 @@ func randomPlantCategory() pb.Category_Category {
 	}
 }
 
-func randomInt(min int, max int) int32 {
-	return int32(min + rand.Intn(max-min+1))
+func randomPlantId() string {
+	return uuid.New().String()
 }
 
 func randomPlantName() string {

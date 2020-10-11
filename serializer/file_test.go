@@ -1,9 +1,8 @@
-
 package serializer
 
 import (
+	"golang_grpc_microservice/data"
 	"golang_grpc_microservice/pb"
-	"golang_grpc_microservice/sample"
 	"testing"
 
 	"github.com/golang/protobuf/proto"
@@ -17,7 +16,7 @@ func TestProtoBufToBinarySerializer(t *testing.T) {
 	binaryFile := "../tmp/plant.bin"
 	jsonFile := "../tmp/plant.json"
 
-	plant1 := sample.NewPlant()
+	plant1 := data.NewPlant()
 	err := WriteProtoBufToBinaryFile(plant1, binaryFile)
 	require.NoError(t, err)
 

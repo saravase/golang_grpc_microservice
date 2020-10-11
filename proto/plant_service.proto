@@ -1,0 +1,19 @@
+syntax="proto3";
+
+package golang_grpc_microservice.plant;
+
+import "plant_message.proto";
+
+option go_package="pb";
+
+message CreatePlantRequest {
+    Plant plant = 1;
+}
+
+message CreatePlantResponse {
+    string id = 1;
+}
+
+service PlantService{
+    rpc CreatePlant(CreatePlantRequest) returns (CreatePlantResponse) {};
+}

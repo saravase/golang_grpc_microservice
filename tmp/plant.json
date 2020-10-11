@@ -1,10 +1,10 @@
 {
- "id": 60,
+ "id": "7d02d037-e454-49fa-a760-40e8d2958deb",
  "name": "Neem",
  "category": {
-  "category": "Vegetable"
+  "category": "Tree"
  },
- "price": 500.5797,
- "avatar": "banana.png",
+ "price": 500.99835,
+ "avatar": "lemon.png",
  "description": "High Vitamin Fruit"
 }

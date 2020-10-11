@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.8.0
-// source: plant.proto
+// source: plant_message.proto
 
 package pb
 
@@ -30,7 +30,7 @@ type Plant struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id          int32     `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id          string    `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name        string    `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Category    *Category `protobuf:"bytes,3,opt,name=category,proto3" json:"category,omitempty"`
 	Price       float32   `protobuf:"fixed32,4,opt,name=price,proto3" json:"price,omitempty"`
@@ -41,7 +41,7 @@ type Plant struct {
 func (x *Plant) Reset() {
 	*x = Plant{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_plant_proto_msgTypes[0]
+		mi := &file_plant_message_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -54,7 +54,7 @@ func (x *Plant) String() string {
 func (*Plant) ProtoMessage() {}
 
 func (x *Plant) ProtoReflect() protoreflect.Message {
-	mi := &file_plant_proto_msgTypes[0]
+	mi := &file_plant_message_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -67,14 +67,14 @@ func (x *Plant) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Plant.ProtoReflect.Descriptor instead.
 func (*Plant) Descriptor() ([]byte, []int) {
-	return file_plant_proto_rawDescGZIP(), []int{0}
+	return file_plant_message_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *Plant) GetId() int32 {
+func (x *Plant) GetId() string {
 	if x != nil {
 		return x.Id
 	}
-	return 0
+	return ""
 }
 
 func (x *Plant) GetName() string {
@@ -112,15 +112,16 @@ func (x *Plant) GetDescription() string {
 	return ""
 }
 
-var File_plant_proto protoreflect.FileDescriptor
+var File_plant_message_proto protoreflect.FileDescriptor
 
-var file_plant_proto_rawDesc = []byte{
-	0x0a, 0x0b, 0x70, 0x6c, 0x61, 0x6e, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x1e, 0x67,
-	0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x5f, 0x67, 0x72, 0x70, 0x63, 0x5f, 0x6d, 0x69, 0x63, 0x72, 0x6f,
-	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x70, 0x6c, 0x61, 0x6e, 0x74, 0x1a, 0x0e, 0x63,
-	0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xc1, 0x01,
+var file_plant_message_proto_rawDesc = []byte{
+	0x0a, 0x13, 0x70, 0x6c, 0x61, 0x6e, 0x74, 0x5f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x1e, 0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x5f, 0x67, 0x72,
+	0x70, 0x63, 0x5f, 0x6d, 0x69, 0x63, 0x72, 0x6f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e,
+	0x70, 0x6c, 0x61, 0x6e, 0x74, 0x1a, 0x16, 0x63, 0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x5f,
+	0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xc1, 0x01,
 	0x0a, 0x05, 0x50, 0x6c, 0x61, 0x6e, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x05, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18,
+	0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18,
 	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x44, 0x0a, 0x08, 0x63,
 	0x61, 0x74, 0x65, 0x67, 0x6f, 0x72, 0x79, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x28, 0x2e,
 	0x67, 0x6f, 0x6c, 0x61, 0x6e, 0x67, 0x5f, 0x67, 0x72, 0x70, 0x63, 0x5f, 0x6d, 0x69, 0x63, 0x72,
@@ -135,23 +136,23 @@ var file_plant_proto_rawDesc = []byte{
 }
 
 var (
-	file_plant_proto_rawDescOnce sync.Once
-	file_plant_proto_rawDescData = file_plant_proto_rawDesc
+	file_plant_message_proto_rawDescOnce sync.Once
+	file_plant_message_proto_rawDescData = file_plant_message_proto_rawDesc
 )
 
-func file_plant_proto_rawDescGZIP() []byte {
-	file_plant_proto_rawDescOnce.Do(func() {
-		file_plant_proto_rawDescData = protoimpl.X.CompressGZIP(file_plant_proto_rawDescData)
+func file_plant_message_proto_rawDescGZIP() []byte {
+	file_plant_message_proto_rawDescOnce.Do(func() {
+		file_plant_message_proto_rawDescData = protoimpl.X.CompressGZIP(file_plant_message_proto_rawDescData)
 	})
-	return file_plant_proto_rawDescData
+	return file_plant_message_proto_rawDescData
 }
 
-var file_plant_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_plant_proto_goTypes = []interface{}{
+var file_plant_message_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_plant_message_proto_goTypes = []interface{}{
 	(*Plant)(nil),    // 0: golang_grpc_microservice.plant.Plant
 	(*Category)(nil), // 1: golang_grpc_microservice.plant.Category
 }
-var file_plant_proto_depIdxs = []int32{
+var file_plant_message_proto_depIdxs = []int32{
 	1, // 0: golang_grpc_microservice.plant.Plant.category:type_name -> golang_grpc_microservice.plant.Category
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
@@ -160,14 +161,14 @@ var file_plant_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_plant_proto_init() }
-func file_plant_proto_init() {
-	if File_plant_proto != nil {
+func init() { file_plant_message_proto_init() }
+func file_plant_message_proto_init() {
+	if File_plant_message_proto != nil {
 		return
 	}
-	file_category_proto_init()
+	file_category_message_proto_init()
 	if !protoimpl.UnsafeEnabled {
-		file_plant_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_plant_message_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Plant); i {
 			case 0:
 				return &v.state
@@ -184,18 +185,18 @@ func file_plant_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_plant_proto_rawDesc,
+			RawDescriptor: file_plant_message_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_plant_proto_goTypes,
-		DependencyIndexes: file_plant_proto_depIdxs,
-		MessageInfos:      file_plant_proto_msgTypes,
+		GoTypes:           file_plant_message_proto_goTypes,
+		DependencyIndexes: file_plant_message_proto_depIdxs,
+		MessageInfos:      file_plant_message_proto_msgTypes,
 	}.Build()
-	File_plant_proto = out.File
-	file_plant_proto_rawDesc = nil
-	file_plant_proto_goTypes = nil
-	file_plant_proto_depIdxs = nil
+	File_plant_message_proto = out.File
+	file_plant_message_proto_rawDesc = nil
+	file_plant_message_proto_goTypes = nil
+	file_plant_message_proto_depIdxs = nil
 }

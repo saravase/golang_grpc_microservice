@@ -2,12 +2,12 @@ syntax="proto3";
 
 package golang_grpc_microservice.plant;
 
-import "category.proto";
+import "category_message.proto";
 
 option go_package = "pb";
 
 message Plant{
-    int32 id = 1;
+    string id = 1;
     string name = 2;
     Category category = 3;
     float price = 4;
